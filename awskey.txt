@@ -1,0 +1,3 @@
+accesskey = AKIAUBIUAVHZFWYG2AP2
+	
+Secret access key = 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
