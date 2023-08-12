@@ -5,14 +5,18 @@ ifffmpeg=$(dpkg-query -W -f='${Status}' ffmpeg 2>/dev/null | grep -c "ok install
 ifwget=$(dpkg-query -W -f='${Status}' wget 2>/dev/null | grep -c "ok installed")
 echo $ifwget
 echo $PWD
-sudo apt install curl
-curl -L https://github.com/storj/storj/releases/latest/download/uplink_linux_amd64.zip -o uplink_linux_amd64.zip
-unzip -o uplink_linux_amd64.zip
-sudo install uplink /usr/local/bin/uplink
+read userid
 if [ $ifffmpeg -eq 0 ]||[ $ifwget -eq 0 ];
 then
  sudo apt-get install ffmpeg
  sudo apt-get install wget
+ sudo apt install curl
+ curl -L https://github.com/storj/storj/releases/latest/download/uplink_linux_amd64.zip -o uplink_linux_amd64.zip
+ unzip -o uplink_linux_amd64.zip
+ sudo install uplink /usr/local/bin/uplink
+ uplink access import main storjaccesskey.txt
+ uplink mb sj://"${userid}"
+
 fi
  echo "All packages already installed"
  #creating directories for camera output
