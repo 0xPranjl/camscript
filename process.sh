@@ -3,8 +3,8 @@
 camurls=("rtsp://zephyr.rtsp.stream/pattern?streamKey=582c4cb399405e77eed5b374541774d8" "rtsp://zephyr.rtsp.stream/movie?streamKey=ebcf6466a3248d80fce101638dbed263")
 username=""
 password=""
-numcam=2
-bucket="cams"
+numcam=1
+bucket="testo"
 
 echo $PWD
 cd cam1
@@ -211,8 +211,6 @@ for entry in "$dir2"/*
   sleep 15
 done
 }
-c1 & c2 
-
 if [ $numcam -eq 1 ]
 c1
 else if [ $numcam -eq 2 ]
