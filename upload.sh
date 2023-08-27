@@ -23,7 +23,7 @@ function pushToS3()
      -H "x-amz-acl: public-read" \
      -H "Date: ${dateValue}" \
      -H "Content-Type: ${contentType}" \
-     "https://camscript.s3.ap-south-1.amazonaws.com/${fname}" \
+     "https://"${bucket}"cript.s3.ap-south-1.amazonaws.com/${fname}" \
      -H "Authorization: AWS ${s3Key}:${signature}"
 
   #done
